@@ -125,6 +125,10 @@ const controlAddRecipe = async function (newRecipe) {
   }
 };
 
+const newFeature = function () {
+  console.log('Welcome to the application!');
+};
+
 // Published - Subscriber Pattern : The events need to be listened in view, and they need to be handled by the controller.However, the view has no way of knowing about controller.So, we have a solution named as publisher-subscriber design pattern.When the program starts in the controller, we are calling the method which listens for an event, and we are passing the controller as an argument to this function inside view.
 const init = function () {
   recipeView.addHandlerRender(controlRecipes);
@@ -134,6 +138,6 @@ const init = function () {
   paginationView.addHandlerClick(controlPagination);
   bookmarksView.addHandlerRender(controlBookmarks);
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  console.log('WELCOME!');
+  newFeature();
 };
 init();
