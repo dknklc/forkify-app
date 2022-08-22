@@ -14,10 +14,6 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import { async } from 'regenerator-runtime';
 
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -74,7 +70,6 @@ const controlServings = function (newServings) {
   model.updateServings(newServings);
 
   // Update the recipe view
-  // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
 };
 
@@ -123,10 +118,6 @@ const controlAddRecipe = async function (newRecipe) {
     console.error('***', err);
     addRecipeView.renderError(err.message);
   }
-};
-
-const newFeature = function () {
-  console.log('Welcome to the application!');
 };
 
 // Published - Subscriber Pattern : The events need to be listened in view, and they need to be handled by the controller.However, the view has no way of knowing about controller.So, we have a solution named as publisher-subscriber design pattern.When the program starts in the controller, we are calling the method which listens for an event, and we are passing the controller as an argument to this function inside view.
